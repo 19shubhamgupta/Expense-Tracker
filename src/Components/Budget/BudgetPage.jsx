@@ -3,6 +3,7 @@ import { MdEdit } from "react-icons/md";
 import BudgetForm from "./BudgetForm";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Hamburger from "../Hamburger";
 
 const BudgetPage = () => {
   const navigate = useNavigate();
@@ -14,15 +15,16 @@ const BudgetPage = () => {
   };
   return (
     <div className="flex-1 bg-white p-6">
-      <h1 className="text-5xl font-bold text-center text-gray-800 mb-8">
-        Budget
-      </h1>
+      <div className="flex">
+        <Hamburger/>
+        <h1 className="text-5xl font-bold text-center mt-2 w-full -ml-4">Budget</h1>
+      </div>
 
       {budget ? (
         <>
           <div className="flex items-center justify-center gap-4 mt-20">
             <MdEdit
-              className="text-red-800 text-3xl cursor-pointer mt-2 "
+              className="text-red-800 size-20 md:size-15  cursor-pointer mt-2  -mr-5 md:mr-0 "
               onClick={()=> handleOnClick()}
             />
             <div className="text-4xl text-red-800 font-bold text-center">

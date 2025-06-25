@@ -26,7 +26,7 @@ const TransactionHistory = () => {
 
   return (
     <>
-      <div className="h-20 w-full flex items-center justify-center gap-4 mt-10">
+      <div className="h-20 w-full flex items-center justify-center gap-4 mt-10 ">
         <IoFilterSharp className="text-5xl text-red-800" />
         <div className="flex items-center bg-red-300 md:w-96 h-12 px-4 rounded-xl space-x-3 border-3 border-red-800">
           <img src="/black-search.svg" className="w-5 h-5" alt="search icon" />
@@ -42,7 +42,7 @@ const TransactionHistory = () => {
         </Link>
       </div>
 
-      <div className="flex flex-col items-center justify-center mt-6">
+      <div className="flex flex-col items-center justify-center mt-6 ">
         {allTransactions.map(
           (transaction) =>
             transaction.title && (

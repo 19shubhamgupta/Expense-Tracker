@@ -14,7 +14,7 @@ const TransactionCard = ({ transaction , idx }) => {
   }
   return (
     <div className="h-20 w-150 flex items-center justify-center gap-10 cursor-pointer">
-      <MdDelete className="text-3xl text-red-800" onClick={(event)=>handleOnClick(event , idx)}/>
+      <MdDelete className="text-3xl text-red-800 hidden md:block" onClick={(event)=>handleOnClick(event , idx)}/>
       <div className="flex items-center justify-center gap-40 border-b-4 border-b-red-800 border-solid w-100 " 
         onClick={(event) => handleDetail(event ,idx)}
       >

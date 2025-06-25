@@ -3,15 +3,17 @@ import { useSelector } from "react-redux";
 import { selectTotalExpense } from "../store/selectors/expenseSelctor";
 import ExpensePieChart from "./PieChart";
 import MonthlyExpenseChart from "./BarChart";
+import Hamburger from "./Hamburger";
 
 const Dashboard = () => {
   const totalExpense = useSelector(selectTotalExpense);
   const { budget , goalMoney} = useSelector((state) => state.budget);
   return (
-    <div className="flex-1 bg-white flex-col p-4">
-      <h1 className="text-5xl font-bold text-center mt-2 text-gray-800">
-        Dashboard
-      </h1>
+    <div className="w-full bg-white flex-col md:p-4">
+      <div className="flex">
+        <Hamburger/>
+        <h1 className="text-5xl font-bold text-center mt-2 w-full">Dashboard</h1>
+      </div>
       <div className="h-60 w-full flex justify-center items-center gap-4 mt-1">
         <div className="w-100 h-40 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex flex-col items-center justify-center gap-2">
           <div className="text-4xl font-medium text-white">Total Earning</div>

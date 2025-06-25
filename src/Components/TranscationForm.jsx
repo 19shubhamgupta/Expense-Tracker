@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addTransaction, editTransaction } from "../store/transactionSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function TransactionForm({ transaction , idx }) {
   const { register, handleSubmit } = useForm({
@@ -14,6 +15,7 @@ export default function TransactionForm({ transaction , idx }) {
     },
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const onSubmitHandle = (data) => {
     if(transaction){
       dispatch(editTransaction({
@@ -28,6 +30,10 @@ export default function TransactionForm({ transaction , idx }) {
   if (transaction) {
     Title = "Edit Transaction";
     btnText = "Update"
+  }
+
+  const handleBtnClick = () => {
+    navigate('/dashboard')
   }
   return (
     <div className="flex items-center justify-center w-full">
@@ -146,6 +152,7 @@ export default function TransactionForm({ transaction , idx }) {
             <button
               type="submit"
               className="w-full inline-flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-red-600 hover:bg-red-800 font-medium text-lg"
+              onClick={() => handleBtnClick()}
             >
               {btnText}
             </button>
